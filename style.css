@@ -1,0 +1,159 @@
+m:root {
+  --theme-color: #285685;
+  --font-color: #ffc765;
+  --shade1: rgba(242, 38, 19, 0.5);
+  --shade2: rgba(0, 255, 255, 0.5);
+}
+
+body {
+  /* background-color: rgb(247, 168, 204); */
+  background: url(1.png); 
+  /*background: linear-gradient(135deg, #f3a4f7, #94ddf3); /* Background gradient */
+  font-family: Chaucer;
+  color: var(--font-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Lucida Handwriting', cursive;
+  font-size: 200%;
+  width: 100%; /* Ensures the flex item takes the full width */
+  height: 100%; /* Ensures the flex item takes the full height */
+}
+
+.photo{
+  background: url(1.png);
+  /* background: linear-gradient(135deg, #f3a4f7, #94ddf3); /* Background gradient */
+}
+
+
+
+
+.collage-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px; /* Adjust as needed */
+  grid-template-areas:
+      "img1 img1 img2 img2"
+      "img3 img4 img4 img5"
+      "img6 img6 img5 img5";
+  font-size: 150%;
+  font-family: Lucida Handwriting;
+}
+
+.collage-image {
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--font-color);
+  border-radius: 10px; /* Optional: Adds rounded corners to the images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow effect */
+  object-fit: cover;
+}
+
+/* Define the specific grid areas for each image */
+.image1 { grid-area: img1; }
+.image2 { grid-area: img2; }
+.image3 { grid-area: img3; }
+.image4 { grid-area: img4; }
+.image5 { grid-area: img5; }
+.image6 { grid-area: img6; }
+
+
+
+
+
+
+
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+
+.textCont {
+  font-size: 250%;
+
+  margin-top: 10%;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 60%;
+  height: 80%;
+}
+
+div.textCont::after {
+  content: "|";
+  animation: blinky 1s linear infinite;
+}
+
+@keyframes blinky {
+  0% {
+    opacity: 0;
+  }
+  49.9% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  99.9% {
+    opacity: 1;
+  }
+}
+
+
+
+ footer {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 100;
+}
+
+footer > a {
+  background-color: transparent;
+  color: var(--font-color);
+  font-weight: bold;
+  font-family: "Megrim";
+  font-size: 110%;
+  text-decoration: none;
+  padding: 5px 20px;
+
+  border: 3px solid var(--font-color);
+  transition: color 0.5s linear, box-shadow 0.5s ease-in;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  right: 5%;
+  position: absolute;
+}
+.pause {
+  cursor: pointer;
+}
